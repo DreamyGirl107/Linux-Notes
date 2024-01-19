@@ -1,1 +1,4 @@
-DNS Reolver:     
+DNS Reolver:   It is the primary intermediary between computer and the other DNS servers.
+               When it receives the request, first it will check in cache to find matching IP address for domain name.
+               If found, the site willbe displayed and if not then the request will be sent to root nameserver.
+
