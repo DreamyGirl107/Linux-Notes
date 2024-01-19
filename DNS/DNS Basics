@@ -1,1 +1,21 @@
-
+ Client request for website ("_")                                   >>>>>>>>>  DNS is a phonebook for the internet. It manages the IP addresses and it's associated domains details. <<<<<<<<<                                                   
+          |                                                        # DNS, which stands for Domain Name System,   
+          |                                                         is a hierarchical decentralized naming system for computers, services, or any resource connected to the internet or a private network.
+Resolving nameserver    (this is your ISP)                                     
+          |                                                        # It translates user-friendly domain names into numerical IP addresses, which are used by computers to identify each other on a network. 
+          |
+          |                                                        # Humans find it easier to remember domain names (like www.example.com) than numerical IP addresses (such as 192.168.1.1).
+          |
+________________                     ______________                        __________________________
+root nameserver --------------------> TLD Nameserver --------------------> Authooritative Nameserver
+________________                     ______________                        __________________________
+                                                                                       |
+                                                                                       |
+                                                                                       |
+                                                                              =================
+                                                                                  DNS Records
+                                                                              =================
+                                                                                       |
+                                                                                       |
+                                                                     Web server and site files will be displayed
+                                                                     ____________________________________________
