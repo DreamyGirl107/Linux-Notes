@@ -1,22 +1,22 @@
- Client request for website ("_")              >>>>>>>>>  DNS is a phonebook for the internet. It manages the IP addresses and it's associated domains details. <<<<<<<<<                                                   
-          |                                    # DNS, which stands for Domain Name System,   
-          |                                    is a hierarchical decentralized naming system for computers, services, or any resource connected to the internet or a private network.
-Resolving nameserver    (this is your ISP)                                     
-          |                                    # It translates user-friendly domain names into numerical IP addresses, which are used by computers to identify each other on a network. 
-          |
-          |                                    # Humans find it easier to remember domain names (like www.example.com) than numerical IP addresses (such as 192.168.1.1).
-          |                                   
+Client request for website ("_")          DNS is a phonebook for the internet. It manages the IP addresses and it's associated domains details.                                                 
+          |                           # DNS, which stands for Domain Name System,  is a hierarchical decentralized naming system  
+         \|/                           for computers, services, or any resource connected to the internet or a private network.
+Resolving nameserver                                        
+ (this is your ISP)                   # It translates user-friendly domain names into numerical IP addresses,  
+          |                            which are used by computers to identify each other on a network.
+          |                           # Humans find it easier to remember domain names (like www.example.com) than numerical IP addresses (such as 192.168.1.1).
+         \|/                                 
 ________________                     ______________                        __________________________
 root nameserver --------------------> TLD Nameserver --------------------> Authooritative Nameserver
 ________________                     ______________                        __________________________
                                                                                        |
                                                                                        |
-                                                                                       |
+                                                                                      \|/
                                                                               =================
                                                                                   DNS Records
                                                                               =================
                                                                                        |
-                                                                                       |
+                                                                                      \|/
                                                                      Web server and site files will be displayed
                                                                      ____________________________________________
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -25,4 +25,15 @@ __________________________
 Domain names are organized in a hierarchical structure, read from right to left.
 The top-level domain (TLD) is on the right side (e.g., .com, .org, .net), followed by the second-level domain (SLD), and any subsequent subdomains.
 For example, in www.example.com, ".com" is the TLD, "example" is the SLD, and "www" is a subdomain.
+
+
+
+
+
+
+
+
+
+
+
 
