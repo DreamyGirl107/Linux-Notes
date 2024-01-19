@@ -1,4 +1,26 @@
-DNS Reolver:   It is the primary intermediary between computer and the other DNS servers.
+                       site requested  >>   www.hostinger.com
+
+DNS Resolver:  It is the primary intermediary between computer and the other DNS servers.
                When it receives the request, first it will check in cache to find matching IP address for domain name.
-               If found, the site willbe displayed and if not then the request will be sent to root nameserver.
+               If found, the site will be displayed and if not then the request will be sent to root nameserver.
+
+
+ROOT Nameserver:  It is at the top of DNS hierarchy.
+                  It doesn't have IP address and domain info but it gives direction to where it can be found.
+                  So when request comes from DNS resolver, the ROOT nameserver will immediately identify the top-level domain (TLD) of the domain name.
+                   (e.g., .com for www.hostinger.com)
+                  And will tell the recursive resolver to go to the coreect TLD Nameserver.
+
+
+TLD Nameserver:   Here the ROOT nameserver will redirect the resolver to .com TLD nameserver.
+                  Then TLD Nameserver will inform the location of IP address at a specific authoritative nameserver .ie. hostinger
+
+
+Authoritative Nameserver:  It is final step in DNS resolution process.
+                           It stores all the information related to the domain name you want to visit, inclusimg IP address.
+                           So resolver will obtain the IP and send it back to your computer, directing you to the site.
+                           Finally, the DNS resolver performs DNS caching, storing  IP address collected from authoritative nameserver as temporary data.
+
+
+
 
