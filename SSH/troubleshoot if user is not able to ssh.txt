@@ -1,0 +1,23 @@
+# Check for Incorrect Username or Password
+
+# Check the PasswordAuthentication setting in (/etc/ssh/sshd_config). If it's set to no, password authentication is disabled.
+
+# Misconfigurations in the SSH server settings may lead to authentication failures.  Mainly check for settings like> AllowUsers, DenyUsers, and PermitRootLogin.
+
+# Too many failed login attempts can lock account temporarily. Check the system logs or use the faillock command to determine if the account is locked.
+
+# Incorrect permissions on the user's home directory, ~/.ssh directory, or authorized_keys file 
+
+#If the user account has an expired password, PuTTY may prompt for the password but reject it.  
+Check the password expiration status using the chage command: chage -l username
+
+# Problems with the Pluggable Authentication Modules (PAM) configuration can cause authentication failures. Check the /etc/pam.d/sshd file for any misconfigurations.
+
+# If Security-Enhanced Linux (SELinux) is enabled and misconfigured, it may prevent login. Check SELinux logs or temporarily disable SELinux to test.
+
+# If firewall rules blocking SSH traffic, PuTTY may not be able to establish a connection. Confirm that the firewall allows incoming connections on the SSH port 22.
+
+# If you have set up key-based authentication and the private key doesn't match the public key on the server, PuTTY may fall back to password authentication. 
+Ensure that your private key matches the public key on the server.
+
+# If the server is under heavy load or experiencing resource limitations, it may affect the ability to authenticate users.

@@ -1,0 +1,20 @@
+new user created in EC2 instance other than ec2-user, but whille taking new session with new user "sapna" it was showing error server refused our key
+troubleshooting>>
+=================================================================================================================================
+we need following parameters in  /etc/ssh/sshd_config file                                  
+------------------------
+PubkeyAuthentication yes
+PasswordAuthentication no
+---------------------------
+>>  vi /etc/ssh/sshd_config                   (make changes in config file if not as required)
+>>  service sshd restart    
+
+next make sure the key present in   ~/.ssh/authorized_keys  of root user should be copied under user sapna's home directory in   ~/.ssh/authorized_keys 
+
+if these both keya are same then u can access user sapna from putty without error
+======================================================================================================================
+Make sure you have added required permissions to below files in each user
+
+   chown ec2-user:ec2-user /home/ec2-user -R
+   chmod 700 /home/ec2-user /home/ec2-user/.ssh
+   chmod 600 /home/ec2-user/.ssh/authorized_keys
