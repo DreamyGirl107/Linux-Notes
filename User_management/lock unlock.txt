@@ -1,0 +1,14 @@
+to lock  and to unlock user account
+#passwd -l sapna      (lock)
+
+#passwd -u sapna        (unlock)
+===============================================================================
+ chage - change user password expiry information
+
+User account locked with the -l option can still log in by other methods such as the ssh public key authentication. 
+
+Use the following command to for full account locking:
+chage -E 0 {username}                          ( full lockdown for user named sapna )
+#chage -E 0 sapna
+
+#chage -E -1 sapna                              (Passing the number -1 as the EXPIRE_DATE will remove an account expiration date)
