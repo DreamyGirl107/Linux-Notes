@@ -7,7 +7,7 @@ Resolving nameserver
           |                           # Humans find it easier to remember domain names (like www.example.com) than numerical IP addresses (such as 192.168.1.1).
          \|/                                 
 ________________                     ______________                        __________________________
-root nameserver --------------------> TLD Nameserver --------------------> Authooritative Nameserver
+root nameserver --------------------> TLD Nameserver --------------------> Authoritative Nameserver
 ________________                     ______________                        __________________________
                                                                                        |
                                                                                        |
