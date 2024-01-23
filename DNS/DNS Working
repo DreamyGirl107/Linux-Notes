@@ -17,6 +17,13 @@
                              So resolver will obtain the IP and send it back to your computer, directing you to the site.
                              Finally, the DNS resolver performs DNS caching, storing  IP address collected from authoritative nameserver as temporary data.
 
+Finally, the user's device receives the IP address and can establish a connection with the server hosting the requested resource.
+
+Caching:
+
+To improve efficiency and reduce the load on DNS servers, results are often cached at different levels (local resolver, TLD server, authoritative server) 
+for a specified time (TTL - Time to Live).
+
 
 
 
