@@ -35,6 +35,7 @@ touch -r referenceFile.txt  new.txt                                   [-r will s
 
 mv files destination/                                                  [will move files to destination directory]
 mv oldname.txt newname.txt                                             [this will rename the file]
+-i    -u   -f   -v       SAME OPTIONS AS cp COOMAND
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
