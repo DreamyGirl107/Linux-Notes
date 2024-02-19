@@ -1,5 +1,6 @@
 SSH key
-To convert .pem to .ppk need puttgen application. in which load ur .pem file with RSA option and wait to generate the key. save the generated private key as .ppk file. and use it in putty.
+To convert .pem to .ppk need puttgen application. in which load ur .pem file with RSA option and wait to generate the key. save the generated private 
+key as .ppk file. and use it in putty.
 To login to remote server, use ip and under ssh > Auth >  credentials >  put the generated private key to get access.
 
 .pem   >>
