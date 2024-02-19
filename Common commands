@@ -1,0 +1,44 @@
+# touch : it creates  empty file and helps to change file timestamp (access and modification time) to its current time
+---------------------------------------------------------------------------------------------------------------
+touch -a newfile.txt                                                  [-a update the access time only ]
+touch -m abc.txt                                                      [-m changes modification time only]
+touch -d "2024-02-19 12:00:00" file.txt                               [-d will help to assign specific timestamp]
+touch -t 202402191200 file.txt                                        [-t use specific timestamp instead of current time, format is [[CC]YY]MMDDhhmm[.SS]
+touch -r referenceFile.txt  new.txt                                   [-r will sets the timestamp same as the reference file]
+
+  touch unnati\ computers\ training\ center\                          [This backslashes means create a file name with spaces and consider it as a single entity\                  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  # mkdir : this creates the directory
+
+  mkdir -p /root/new/mynew/data1                                      [-p helps to create subdirectories along with parent directory even if the parent directory does not exists]
+  mkdir -m 775 data1                                                  [ -m helps to create a directory with the permissions]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  # cp: copy files and directories from single or multiple sources to one destination
+
+  cp source1 source2 sourceN  destination_dir/                        [ This copies multiple files to single directory]
+
+  cp -r files/source   destination/                                   [ -r will recursively copy files to destination]
+  cp -i files  destination/                                           [-i is interactive means it will show/promts msg before overwriting existing file]
+  cp -v files destination/                                            [ -v shows detailed information about the copy operation]
+
+ ************ cp -p file1 directory1/                                             [-p Preserves file attributes such as timestamps, ownership, and permissions]        ***********
+
+  cp -u file2 dir2/data/                                              [-u copies the file only if it is newer or updated than the destination file or if the file doesnot exists at destination]
+  cp -f files/source/   destination/                                  [-f forces the copy operation, overriding any existing files without prompting]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# mv: used to move files or directories from one location to another. It can also be used to rename files and directories.
+
+mv files destination/                                                  [will move files to destination directory]
+mv oldname.txt newname.txt                                             [this will rename the file]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+  
+  
+
+  
