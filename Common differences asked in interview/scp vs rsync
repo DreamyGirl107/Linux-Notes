@@ -1,22 +1,7 @@
-      SCP                     |                           rsync
-----------------------------------------------------------------------------      
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
-                              |
+                            scp                                              |                              rsync
+    simple for basic file transfer		                                   |       it is efficient for synchronising large files/directories over a network
+    useful for single file                                                   |       useful for multiple files/directories, 
+    relies on SSH for secure data transfer                                   |       it only transfers the differences between source and destination, reducing data transfer.
+    Used for securely copying files between local and remote systems.  	     |	 Designed for efficient file synchronization and transfer.
+    Typically utilized for one-time transfers.					     |	 Suitable for repeated transfers, updates, and backups.
+    #scp localfile.txt username@remote_server:/path/to/destination/	     |	 #rsync -avz /local/directory/ username@remote_server:/path/to/destination/
