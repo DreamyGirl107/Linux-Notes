@@ -18,7 +18,6 @@ Then SSH to your server as root, and log in to MySQL by running the following co
 ---------------------------------------------------------
 # mysql
 
-
 2. SSH to the server, then log in to MySQL
 
 # mysql -u <USER> -p
@@ -27,3 +26,9 @@ Then SSH to your server as root, and log in to MySQL by running the following co
  you need the hostname or IP address of the MySQL server. Then, run the following command:
 
 # mysql -h <HOSTNAME_OR_IP> -u <USER> -p
+
+===============================================================================================================================================================================
+
+In MySQL, the wildcard character is a percentage (%) symbol. For example, run the following command to search for all databases ending in the word schema:
+
+> show databases like "%schema";
