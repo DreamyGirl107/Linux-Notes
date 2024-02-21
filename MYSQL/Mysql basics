@@ -1,0 +1,19 @@
+Databases are organized collections of data. Mysql is a commonly used type of linux database.
+MySQL is slightly slower than MariaDB in replication and querying. MariaDB is slightly faster than MySQL in replication and querying. MySQL and MariaDB are largely the same and interchangeable.
+
+=> To check the database version:
+# mysql -v
+
+=> How to access db:
+1.   SSH in as root, then log in to MySQL
+
+first create below file if does not exists
+--------------------------------------------------------
+# vim /root/.my.cnf                                         |  .my.cnf in your home directory is only read by the mysql clients, so this is not where you should set system variables for the mysql server. 
+user=root                                                   |  .my.cnf can be used e.g. for your credentials so that you can log in without having to type the username and password every time.
+[client]
+password=<password>
+
+Then SSH to your server as root, and log in to MySQL by running the following command:
+---------------------------------------------------------
+# mysql
