@@ -17,3 +17,13 @@ password=<password>
 Then SSH to your server as root, and log in to MySQL by running the following command:
 ---------------------------------------------------------
 # mysql
+
+
+2. SSH to the server, then log in to MySQL
+
+# mysql -u <USER> -p
+
+3. Connect directly to MySQL
+ you need the hostname or IP address of the MySQL server. Then, run the following command:
+
+# mysql -h <HOSTNAME_OR_IP> -u <USER> -p
