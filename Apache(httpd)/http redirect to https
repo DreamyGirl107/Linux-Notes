@@ -1,0 +1,70 @@
+Using the redirect directive
+Apache has a redirect directive that you can add to the vhost to redirect any traffic to the specified site. Below is an example of using the directive to redirect all http traffic to https:
+
+
+    `<VirtualHost *:80>
+        DocumentRoot /var/www/example.com/httpdocs
+        ServerName example.com
+        Redirect / https://example.com      <-----
+        ServerAlias www.example.com
+    </VirtualHost>
+
+      <VirtualHost *:443>
+         DocumentRoot /var/www/example.com/httpdocs
+         ServerName example.com
+         ServerAlias www.example.com
+          SSLEngine on
+          SSLCertificateFile /etc/pki/tls/certs/2017-example.com.crt
+          SSLCACertificateFile /etc/pki/tls/certs/CABundle.crt
+          SSLCertificateKeyFile /etc/pki/tls/private/2017-example.com.key
+       </VirtualHost>`
+The preceding example only works for that single page by establishing a temporary 302 redirect. Establish a permanent 301 redirect, by using the redirect directive as follows:
+
+
+    Redirect 301 / https://example.com
+    Redirect permanent / https://example.com
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+http redirect to https
+
+Edit the WordPress Files Manually
+To edit your WordPress files, visit your General Settings and update your WordPress and site URL addresses to HTTPS rather than HTTP.
+
+  Then set up your redirects in your .htaccess file:
+---------------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}
+[L,R=301]
+</IfModule>
+---------------------------------------------------------------------------------------
+  Look confusing? Here’s the breakdown: 
+
+“RewriteEngine On” enables the rewrite 
+“RewriteCond %{HTTPS} off” checks for the HTTP connection
+“RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUSEST_URI} [L,R=301]” redirects HTTP to HTTPS with a 301 status code
+Now WordPress should load your site with HTTPS.
+
+
+
+===============================================================================================================================================================================================
+
+PHP approach
+  
+<?php
+function redirectTohttps() {
+    if ($_SERVER['HTTPS']!="on") {
+        $redirect= "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        header("Location:$redirect"); 
+    } 
+}
+?>
+=================================
+.htaccess approach
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
