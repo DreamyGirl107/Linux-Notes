@@ -1,1 +1,58 @@
 https://docs.oracle.com/en/operating-systems/oracle-linux/6/admin/svc-start-runlevel.html#:~:text=You%20can%20use%20the%20chkconfig,the%20%2Fetc%2Frc%20N%20.
+
+
+ Configuring Services to Start at Different Run Levels
+You can use the chkconfig command to define in which run levels a service should run, to list startup information for services, and to check the state of services. chkconfig changes the configuration of the symbolic links in the /etc/rcN.d directories.
+
+Note
+You cannot use chkconfig to change the current state of a service. To stop or start a service, use the service command.
+
+To list the run-level configuration of all services that run their own daemon:
+
+# chkconfig --list
+NetworkManager 	0:off	1:off	2:on	 3:on	4:on	 5:on	6:off
+abrt-ccpp      	0:off	1:off	2:off	3:on	4:off	5:on	6:off
+abrt-oops      	0:off	1:off	2:off	3:on	4:off	5:on	6:off
+abrtd          	0:off	1:off	2:off	3:on	4:off	5:on	6:off
+acpid          	0:off	1:off	2:on	 3:on	4:on	 5:on	6:off
+atd            	0:off	1:off	2:off	3:on	4:on	 5:on	6:off
+...
+The command lists each service, followed by its configured state for each run level. For example, the abrtd service is configured to run at run levels 3 and 5.
+
+To view the configuration of a particular service, such as ntpd, specify its name as an argument:
+
+# chkconfig --list ntpd
+ntpd           	0:off	1:off	2:on	3:on	4:on	5:on	6:off
+To enable a service to run at run levels 2,3, 4, or 5, use the on argument:
+
+# chkconfig httpd on
+# chkconfig --list httpd
+httpd          	0:off	1:off	2:on	3:on	4:on	5:on	6:off
+To enable the service for certain run levels only, specify the --level option followed by a concatenated list of the run levels, for example:
+
+# chkconfig --level 35 httpd on
+# chkconfig --list httpd
+httpd          	0:off	1:off	2:off	3:on	4:off	5:on	6:off
+Similarly, the off argument disables a service for run levels 2, 3, 4, and 5, or for the run levels specified by --level, for example:
+
+# chkconfig sshd off
+# chkconfig --list sshd
+sshd           	0:off	1:off	2:off	3:off	4:off	5:off	6:off
+# chkconfig sshd on
+# chkconfig --list sshd
+sshd           	0:off	1:off	2:on	3:on	4:on	5:on	6:off
+# chkconfig --level 34 sshd off
+# chkconfig --list sshd
+sshd           	0:off	1:off	2:on	3:off	4:off	5:on	6:off
+The chkconfig command changes the configuration of a service to run at a particular run level. It does not change the current state of a service as this example shows:
+
+# runlevel
+N 5
+
+# chkconfig sshd off
+# chkconfig --list sshd
+sshd           	0:off	1:off	2:off	3:off	4:off	5:off	6:off
+# service sshd status
+openssh-daemon (pid  12101) is running...
+The changed configuration of the sshd service takes effect only when you next change the system's run state, for example, by rebooting the system. 
+You could, of course, use the service sshd stop command to stop the service.
